@@ -179,7 +179,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'djpclient_example.books',
     
-    'djpclient_example.djpclient.djpclient',
+    'djpclient',
     
     'kombu.transport.django',
     'djcelery',
