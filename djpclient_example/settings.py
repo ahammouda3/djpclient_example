@@ -1,6 +1,7 @@
 # Django settings for djpclient_example project.
 
 import os
+import dj_database_url
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -12,6 +13,11 @@ ADMINS = (
 MANAGERS = ADMINS
 
 SETTINGS_PATH = os.path.dirname(__file__)
+
+if os.environ['CURRENT_ENVIRONMENT'] == 'PROD':
+    CURRENT_ENVIRONMENT = 'PROD'
+else:
+    CURRENT_ENVIRONMENT = 'DEV'
 
 # --------------------------------------------------
 # PROFILER SETTINGS
@@ -45,17 +51,20 @@ PROFILE_USER_ACTIVITY = False
 #for debugging
 #DJP_API_KEY = '493b0c8936a282ca1ea1eee47a61d1b80ee7090d'
 
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'data.db',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
+if CURRENT_ENVIRONMENT == 'DEV':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+            'NAME': 'data.db',                      # Or path to database file if using sqlite3.
+            'USER': '',                      # Not used with sqlite3.
+            'PASSWORD': '',                  # Not used with sqlite3.
+            'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+            'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+            }
+        }
+else:
+    DATABASE_URL = os.environ['HEROKU_POSTGRESQL_BLUE_URL']
+    DATABASES = {'default': dj_database_url.parse(DATABASE_URL)}
 
 
 # --------------------------------------------------

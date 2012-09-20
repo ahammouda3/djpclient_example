@@ -1,5 +1,6 @@
 *.pyc
 *.pyo
+*~
 venv
 logs
 .svn
@@ -9,5 +10,3 @@ build
 lib
 data.db
 file_cache
-djpclient
-
