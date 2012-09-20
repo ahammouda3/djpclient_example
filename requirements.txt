@@ -1,2 +1,6 @@
 Django==1.4
 dj-database-url==0.2.1
+gunicorn==0.13.4
+greenlet==0.3.4
+psycopg2
+
