@@ -197,8 +197,8 @@ INSTALLED_APPS = (
     
     'djpclient_example.djpclient.djpclient',
     
-    'kombu.transport.django',
-    'djcelery',
+    #'kombu.transport.django',
+    #'djcelery',
 )
 
 
@@ -210,8 +210,8 @@ BROKER_HOST = DATABASES['default']['HOST']
 BROKER_USER = DATABASES['default']['USER']
 BROKER_PASSWORD = DATABASES['default']['PASSWORD']
 
-import djcelery
-djcelery.setup_loader()
+#import djcelery
+#djcelery.setup_loader()
 
 
 
