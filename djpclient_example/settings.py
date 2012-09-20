@@ -33,8 +33,14 @@ DJP_SEND_DELAY = 1.0
 # credentials for djangoperformance.com demo account.
 # demo account username / password = demo / demo
 DJP_APP_NAME = 'djpclient_example'
-DJP_APP_USERNAME = 'demo'
-DJP_API_KEY = '89ea8b5dc16598ec091994d7a53e7abc1d9ead96'
+DJP_APP_USERNAME = 'ahammouda@uchicago.edu'
+DJP_API_KEY = '52a23dce5012c1522eddf2483920926c622d87d3'
+
+USE_BUNDLED_ENDPOINT = True
+PROFILE_QUERIES = False
+PROFILE_BENCHMARKS = False
+PROFILE_MEMCACHE_STATS = False #Won't work without caching set up
+PROFILE_USER_ACTIVITY = False
 
 #for debugging
 #DJP_API_KEY = '493b0c8936a282ca1ea1eee47a61d1b80ee7090d'
@@ -130,6 +136,7 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 #     'django.template.loaders.eggs.Loader',
+#    'django.template.loaders',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -143,7 +150,7 @@ MIDDLEWARE_CLASSES = (
     
     
     # uncomment this line to profile the entie client application (recommended)
-    'djpclient.middleware.DJPClientMiddleware',
+    'djpclient_example.djpclient.djpclient.middleware.DJPClientMiddleware',
     
     # middleware for site-wide caching
 #    'django.middleware.cache.UpdateCacheMiddleware',
