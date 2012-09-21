@@ -39,10 +39,15 @@ DJP_SEND_DELAY = 1.0
 
 # credentials for djangoperformance.com demo account.
 # demo account username / password = demo / demo
-DJP_APP_NAME = 'djpclient_example'
-DJP_APP_USERNAME = 'ahammouda@uchicago.edu'
-DJP_API_KEY = '52a23dce5012c1522eddf2483920926c622d87d3'
-
+if CURRENT_ENVIRONMENT == 'DEV':
+    DJP_APP_NAME = 'djpclient_example'
+    DJP_APP_USERNAME = 'ahammouda@uchicago.edu'
+    DJP_API_KEY = '52a23dce5012c1522eddf2483920926c622d87d3'
+else:
+    DJP_APP_NAME = 'djpclient_example'
+    DJP_APP_USERNAME = 'ahammouda@uchicago.edu'
+    DJP_API_KEY = 'e46c83b5992082a97b28df8532f67b74cefd5eab'
+    
 USE_BUNDLED_ENDPOINT = True
 PROFILE_QUERIES = False
 PROFILE_BENCHMARKS = False
