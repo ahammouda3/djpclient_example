@@ -159,7 +159,7 @@ MIDDLEWARE_CLASSES = (
     
     
     # uncomment this line to profile the entie client application (recommended)
-    #'djpclient_example.djpclient.djpclient.middleware.DJPClientMiddleware',
+    'djpclient_example.djpclient.djpclient.middleware.DJPClientMiddleware',
     
     # middleware for site-wide caching
 #    'django.middleware.cache.UpdateCacheMiddleware',
@@ -195,7 +195,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'djpclient_example.books',
     
-    #'djpclient_example.djpclient.djpclient',
+    'djpclient_example.djpclient.djpclient',
     
     #'kombu.transport.django',
     #'djcelery',
@@ -220,7 +220,6 @@ BROKER_PASSWORD = DATABASES['default']['PASSWORD']
 # the site admins on every HTTP 500 error when DEBUG=False.
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
-'''
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -235,10 +234,10 @@ LOGGING = {
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         },
-        #'djp_handler': {
-        #    'level': 'INFO',
-        #    'class': 'djpclient.log.DJPHandler',
-        #}
+        'djp_handler': {
+            'level': 'INFO',
+            'class': 'djpclient.log.DJPHandler',
+        }
     },
     'loggers': {
         'djpclient_example.books.views': {
@@ -253,4 +252,3 @@ LOGGING = {
         },
     }
 }
-'''

@@ -5,3 +5,19 @@ gevent==0.13.4
 greenlet==0.3.4
 psycopg2
 -e ./djpclient_example/djpclient
+
+
+#amqplib==1.0.2
+#anyjson==0.3.3
+#billiard==2.7.3.13
+#celery==3.0.9
+##django-celery==3.0.9
+#greenlet==0.3.4
+#gunicorn==0.13.4
+#kombu==2.4.6
+#psycopg2==2.4.5
+#python-dateutil==1.5
+#python-memcached==1.48
+#requests==0.14.0
+#stopwatch==0.3.1
+#wsgiref==0.1.2

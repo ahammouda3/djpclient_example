@@ -15,7 +15,7 @@ We want the latest branch I'm using so, I do the following
 
 (venv)$ cd ../../
 
-(venv)$ pip install djpclient_example/djpclient/setup.py
+(venv)$ pip install djpclient_example/djpclient
 
 Then of course the app should be added to settings.py (I've added it in both the 
 installed apps and with the rest of the middleware classes
