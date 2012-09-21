@@ -1,4 +1,4 @@
-{% load djpclient_example.djpclient.djpclient.templatetags.gaclient_tags %}
+{% load gaclient_tags %}
 <html>
 	<head>
 		<title>{% block title %}{% endblock %}</title>
