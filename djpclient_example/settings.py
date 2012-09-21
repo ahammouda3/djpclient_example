@@ -48,6 +48,17 @@ PROFILE_BENCHMARKS = False
 PROFILE_MEMCACHE_STATS = False #Won't work without caching set up
 PROFILE_USER_ACTIVITY = False
 
+#---------------------------------
+# Analytics settings for djpclient
+#---------------------------------
+TRACK_GOOGLE_ANALYTICS = True
+GA_PROFILE_ID = 'UA-33670488-2'
+if CURRENT_ENVIRONMENT == 'PROD':
+    SESSION_COOKIE_DOMAIN = 'http://www.http://djpclient-example.herokuapp.com'
+else:
+    SESSION_COOKIE_DOMAIN = 'http://localhost:7000'
+
+
 #for debugging
 #DJP_API_KEY = '493b0c8936a282ca1ea1eee47a61d1b80ee7090d'
 
