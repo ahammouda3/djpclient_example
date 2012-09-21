@@ -1,3 +1,0 @@
-[submodule "djpclient_example/djpclient"]
-	path = djpclient_example/djpclient
-	url = https://github.com/ahammouda3/djpclient.git
