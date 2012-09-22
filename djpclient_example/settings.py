@@ -44,7 +44,7 @@ if CURRENT_ENVIRONMENT == 'DEV':
     DJP_APP_USERNAME = 'ahammouda@uchicago.edu'
     DJP_API_KEY = '52a23dce5012c1522eddf2483920926c622d87d3'
 else:
-    DJP_APP_NAME = 'djpclient_example'
+    DJP_APP_NAME = 'exampleapp'
     DJP_APP_USERNAME = 'ahammouda@uchicago.edu'
     DJP_API_KEY = 'e46c83b5992082a97b28df8532f67b74cefd5eab'
     
