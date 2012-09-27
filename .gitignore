@@ -10,4 +10,3 @@ build
 lib
 data.db
 file_cache
-sessionid*
