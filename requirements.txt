@@ -1,17 +1,24 @@
-Django==1.4
+Django==1.4.1
 dj-database-url==0.2.1
 gunicorn==0.13.4
 gevent==0.13.4
 greenlet==0.3.4
 psycopg2
+South==0.7.6
 -e ./djpclient_example/djpclient
+
+
+
 
 
 #amqplib==1.0.2
 #anyjson==0.3.3
 #billiard==2.7.3.13
 #celery==3.0.9
-##django-celery==3.0.9
+#dj-database-url==0.2.1
+#django-celery==3.0.9
+#djpclient==0.2.0
+#gevent==0.13.4
 #greenlet==0.3.4
 #gunicorn==0.13.4
 #kombu==2.4.6

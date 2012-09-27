@@ -219,7 +219,7 @@ INSTALLED_APPS = (
     'djpclient_example.books',
     
     'djpclient_example.djpclient.djpclient',
-    
+    'south',
     #'kombu.transport.django',
     #'djcelery',
 )
