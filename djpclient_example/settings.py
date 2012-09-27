@@ -42,7 +42,8 @@ DJP_SEND_DELAY = 1.0
 if CURRENT_ENVIRONMENT == 'DEV':
     DJP_APP_NAME = 'djpclient_example'
     DJP_APP_USERNAME = 'ahammouda@uchicago.edu'
-    DJP_API_KEY = '52a23dce5012c1522eddf2483920926c622d87d3'
+    DJP_API_KEY = '52a23dce5012c1522eddf2483920926c622d87d3' #For sending to staging djpsite
+    #DJP_API_KEY = 'e46c83b5992082a97b28df8532f67b74cefd5eab' # For sending to dev-djpsite
 else:
     DJP_APP_NAME = 'exampleapp'
     DJP_APP_USERNAME = 'ahammouda@uchicago.edu'
@@ -87,12 +88,16 @@ else:
 # --------------------------------------------------
 # CACHE SETTINGS
 # --------------------------------------------------
-CACHE_BACKEND = 'file://%s/file_cache' % (SETTINGS_PATH,)
+#CACHE_BACKEND = 'file://%s/file_cache' % (SETTINGS_PATH,)
 
 # uncomment this line to use python-memcached for the cache backend
 #CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
 
 
+#SESSION_SAVE_EVERY_REQUEST = True
+#SESSION_COOKIE_NAME='ga-report-id'
+SESSION_ENGINE = 'django.contrib.sessions.backends.file'
+SESSION_FILE_PATH = '/%s/session_file' % (SETTINGS_PATH,)
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -173,10 +178,11 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'djpclient_example.djpclient.djpclient.middleware.DJPClientMiddleware',
     
     
     # uncomment this line to profile the entie client application (recommended)
-    'djpclient_example.djpclient.djpclient.middleware.DJPClientMiddleware',
+    
     
     # middleware for site-wide caching
 #    'django.middleware.cache.UpdateCacheMiddleware',
@@ -237,6 +243,7 @@ BROKER_PASSWORD = DATABASES['default']['PASSWORD']
 # the site admins on every HTTP 500 error when DEBUG=False.
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
+'''
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -269,3 +276,4 @@ LOGGING = {
         },
     }
 }
+'''

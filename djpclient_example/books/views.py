@@ -1,4 +1,3 @@
-
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.shortcuts import render_to_response
@@ -10,14 +9,21 @@ from django.core.cache import cache
 
 from forms import AuthorForm, BookForm, PublisherForm
 from models import Author, Book, Publisher
+#from djpclient_example.djpclient.djpclient.models import User
 
-import logging
+import logging, datetime, pdb
 logger = logging.getLogger(__name__)
 #logger = logging.getLogger('djplogger')
 
 
 @require_http_methods(['GET', 'POST'])
 def list_and_add_view(request, template_name, model, formclass):
+    #if request.session.test_cookie_worked():
+    #    request.session.delete_test_cookie()
+    #    print 'SUCCESS'
+    #else:
+    #    print 'Failure'
+    
     if request.method == 'GET':
         form = formclass()
     else:
@@ -42,6 +48,13 @@ def list_and_add_view(request, template_name, model, formclass):
 
 @require_http_methods(['GET', 'POST'])
 def book_view(request):
+    #print request.session.session_key
+    #print request.session.__dict__
+    
+    #request.session.set_test_cookie()
+    #print 'post set'
+    #print request.session.__dict__
+                
     if request.method == 'GET':
         form = BookForm()
     else:
@@ -68,10 +81,11 @@ def book_view(request):
     logger.info('Found %d books' % books.count())
     
     if not form.is_valid() or request.method == 'GET':
-        return render_to_response('books.html',
-                                  {'form': form,
-                                   'object_list': books},
-                                  context_instance=RequestContext(request))
+        response = render_to_response('books.html',
+                                      {'form': form,
+                                       'object_list': books},
+                                      context_instance=RequestContext(request))
+        return response
     else:
         logger.info('Saving new book')
         newitem = form.save()
