@@ -15,10 +15,10 @@ MANAGERS = ADMINS
 
 SETTINGS_PATH = os.path.dirname(__file__)
 
-if os.environ['CURRENT_ENVIRONMENT'] == 'PROD':
-    CURRENT_ENVIRONMENT = 'PROD'
-else:
-    CURRENT_ENVIRONMENT = 'DEV'
+#CURRENT_ENVIRONMENT = DEV
+CURRENT_ENVIRONMENT = STAGING
+#CURRENT_ENVIRONMENT = PROD
+
 
 # --------------------------------------------------
 # PROFILER SETTINGS
