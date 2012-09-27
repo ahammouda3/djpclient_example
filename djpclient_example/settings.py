@@ -60,7 +60,7 @@ PROFILE_USER_ACTIVITY = False
 #---------------------------------
 TRACK_GOOGLE_ANALYTICS = True
 GA_PROFILE_ID = 'UA-33670488-2'
-if CURRENT_ENVIRONMENT == 'PROD':
+if CURRENT_ENVIRONMENT == 'PROD' or CURRENT_ENVIRONMENT == 'STAGING':
     SESSION_COOKIE_DOMAIN = 'http://www.http://djpclient-example.herokuapp.com'
 else:
     SESSION_COOKIE_DOMAIN = 'http://localhost:7000'
@@ -178,7 +178,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'djpclient_example.djpclient.djpclient.middleware.DJPClientMiddleware',
+    'djpclient_example.djpclient.djpclient.middleware.DJPClientMiddleware',
     
     
     # uncomment this line to profile the entie client application (recommended)
