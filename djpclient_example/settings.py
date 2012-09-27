@@ -72,12 +72,12 @@ else:
 if CURRENT_ENVIRONMENT == 'DEV':
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': 'data.db',                      # Or path to database file if using sqlite3.
-            'USER': '',                      # Not used with sqlite3.
-            'PASSWORD': '',                  # Not used with sqlite3.
-            'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+            'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add '', 'mysql', 'sqlite3' or 'oracle'.
+            'NAME': 'djpclient_example',                      # Or path to database file if using sqlite3
+            'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
             'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+            'USER': 'adam',                      # Not used with sqlite3.
+            'PASSWORD': 'postgres',                  # Not used with sqlite3.
             }
         }
 else:
@@ -178,7 +178,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'djpclient_example.djpclient.djpclient.middleware.DJPClientMiddleware',
+    #'djpclient_example.djpclient.djpclient.middleware.DJPClientMiddleware',
     
     
     # uncomment this line to profile the entie client application (recommended)
