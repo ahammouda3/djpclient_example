@@ -26,5 +26,3 @@ kombu==2.4.7
 
 six==1.2.0
 -e ./djpclient_example/djpclient
-
-
