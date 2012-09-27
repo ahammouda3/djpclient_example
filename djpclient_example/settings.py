@@ -96,8 +96,8 @@ else:
 
 #SESSION_SAVE_EVERY_REQUEST = True
 #SESSION_COOKIE_NAME='ga-report-id'
-SESSION_ENGINE = 'django.contrib.sessions.backends.file'
-SESSION_FILE_PATH = '/%s/session_file' % (SETTINGS_PATH,)
+#SESSION_ENGINE = 'django.contrib.sessions.backends.file'
+#SESSION_FILE_PATH = '/%s/session_file' % (SETTINGS_PATH,)
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
